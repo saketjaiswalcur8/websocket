@@ -22,7 +22,7 @@ connected_clients = set()
 async def get_transcript():
     with open("static/index.html") as f:
         return HTMLResponse(content=f.read())
-@app.websocket("/anlysis")
+@app.websocket("/analysis")
 async def websocket_endpoint(websocket: WebSocket):
     """WebSocket endpoint for frontend clients to receive real-time transcriptions."""
     await websocket.accept()
